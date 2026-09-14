@@ -3,6 +3,7 @@ import { RouterProvider } from "react-router/dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import MainLayout from "../layouts/MainLayout";
+import Weather from "../pages/Weather";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "/weather",
+        element: <Weather />,
       },
     ],
   },
