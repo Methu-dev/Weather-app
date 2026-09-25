@@ -7,6 +7,7 @@ const LocationModal = ({ onClose }) => {
   const navigate = useNavigate();
   const [city, setCity] = useState("");
   const [error, setError] = useState("");
+
   const goToPage = (location) => {
     navigate("/weather", { state: { location } });
   };
@@ -14,14 +15,14 @@ const LocationModal = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const value = city.trim();
-    // console.log(value);
+
     if (!value) {
       setError("Please enter a city name");
       return;
     }
     try {
       const location = await getGeolocation(value);
-      // console.log(result);
+
       if (!location) {
         setError("Geocoding request failed!");
         return;

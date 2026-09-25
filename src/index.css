@@ -1,1 +1,26 @@
 @import "tailwindcss";
+@keyframes rainFall {
+    0% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(420px);
+        opacity: 0;
+    }
+}
+
+.rain-drop {
+    position: absolute;
+    top: -30px;
+    width: 3px;
+    height: 24px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.7);
+    animation: rainFall 1s linear infinite;
+}
